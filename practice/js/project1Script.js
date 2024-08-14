@@ -1,4 +1,4 @@
-import counter from "../../js/counter.js";
+import counter from "./counter.js";
 
 // attach event listeners to elements
 document.getElementById("voteBtn").addEventListener("click", upVote)
