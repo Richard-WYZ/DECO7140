@@ -66,3 +66,18 @@
   .card-button:hover {
     background-color: #0056b3;
   }
+
+  /* button components */
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+  }
