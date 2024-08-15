@@ -16,4 +16,11 @@ header {
     background-color: bisque;
 }
 
+/* helper class */
+.float-right {
+    float: right;
+}
 
+.float-left {
+    float: left;
+}
