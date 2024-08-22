@@ -5,9 +5,17 @@
 /* navbar components */
 .navbar {
   position: fixed;
-  background-color: var(--primary);
+  background-color: var(--light);
   overflow-y: auto;
   height: 100%;
+}
+
+.head-nav {
+  flex: 1;
+  width: 80px;
+  max-width: 80px;
+  padding-left: 10px;
+  margin-top: 3%;
 }
 
 /* card components */

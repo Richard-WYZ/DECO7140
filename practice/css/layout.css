@@ -7,13 +7,13 @@
   margin: 15% auto 2% auto;
 }
 
-.site-container{
-    background-color: white;
-}
-
 header {
     width: 100%;
     background-color: bisque;
+}
+
+.head-container {
+    display: flex;
 }
 
 /* helper class */
