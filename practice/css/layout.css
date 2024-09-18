@@ -2,25 +2,45 @@
     practice websiet layout
 */
 
+.navbar-container {
+  position: fixed;
+  top: 150px;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+}
+
 .page-container {
-  width: 80%;
-  margin: 15% auto 2% auto;
+  margin-left: 150px;
+  margin-top: 150px;
+  padding-inline: 60px;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  width: 100%;
 }
 
 header {
-    width: 100%;
-    background-color: bisque;
+  width: 100%;
+  height: 150px;
+  background-color: bisque;
 }
 
 .head-container {
-    display: flex;
+  display: flex;
 }
 
 /* helper class */
 .float-right {
-    float: right;
+  float: right;
 }
 
 .float-left {
-    float: left;
+  float: left;
+}
+
+footer {
+    margin-left: 150px;
 }
