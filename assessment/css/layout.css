@@ -97,5 +97,6 @@ footer {
 
     #flexnavbar > button{
         display: block;
+        margin-bottom: 20px;
     }
 }
