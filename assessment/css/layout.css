@@ -16,31 +16,38 @@ footer {
     grid-template-areas: 
     "header"
     "main"
-    "footer"
-    "nav";
+    "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto;
 }
 
 
 /* layout of navigation bar */
 #flexnavbar {
-    grid-area: nav;
-    /*position: fixed;
+    position: fixed;
     bottom: 0;
-    width: 100%;*/
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 50px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
     background-color: var(--theme);
 }
 
 #flexnavbar > a{
-    flex: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
+    color: var(--primary);
 }
 
 #flexnavbar > div, button{
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -48,29 +55,47 @@ footer {
     #grid-container {
         display: grid;
         grid-template-areas: 
-        "nav header"
-        "nav main"
-        "nav footer";
-        grid-template-columns: auto 1fr;
+        "header"
+        "main"
+        "footer";
+        grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
 
     #flexnavbar {
-        grid-area: nav;
-        /*position: fixed;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
         height: 100%;
-        width: 150px;*/
+        width: 150px;
+        height: 100vh;
         display: flex;
         flex-flow: column wrap;
         justify-content: space-around;
+        padding: 5px;
         background-color: var(--theme);
     }
     
     #flexnavbar > a{
-        flex: 1;
+        flex-grow: 1;
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+        padding: 2px;
+        color: var(--primary);
     }
 
-    #flexnavbar > div, button{
-        visibility: visible;
+    #flexnavbar > a:hover{
+        background-color: #50A76AFF;
+    }
+
+    #flexnavbar > div{
+        display: block;
+        height: 40%;
+    }
+
+    #flexnavbar > button{
+        display: block;
     }
 }

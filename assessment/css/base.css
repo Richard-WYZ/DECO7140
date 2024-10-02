@@ -14,14 +14,34 @@
   /*
       website font family
   */
-  
+  html {
+    margin-bottom: 50px;
+  }
+
   body {
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 100%;
     height: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     background-color: var(--background);
   }
-  
+  @media screen and (min-width: 600px){
+    html {
+      margin-left: 150px;
+    }
+
+    body {
+      font-family: "Roboto", "Arial", sans-serif;
+      font-size: 100%;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: var(--background);
+    }
+  }
   header {
     /*position: fixed;
     width: 100%;
@@ -82,5 +102,5 @@
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
   }
