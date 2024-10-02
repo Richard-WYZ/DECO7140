@@ -8,7 +8,8 @@
     --theme: #73BA9B;
     --background: #FBE8DA;
     --danger: #E06052;
-    /*--btn:#;*/
+    --btn_on:#FFFFFF;
+    --btn_off:#FF0700FF;
   }
   
   /*
@@ -43,6 +44,8 @@
     }
   }
   header {
+    display: flex;
+    justify-content: center;
     /*position: fixed;
     width: 100%;
     background-color: var(--secondary);
@@ -92,6 +95,8 @@
   }
   
   footer p {
+    display: flex;
+    justify-content: center;
     font-size: 0.8rem;
     margin-top: 5%;
     margin-bottom: 1%;
