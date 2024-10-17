@@ -16,4 +16,8 @@ function handleError(Error) {
   console.log("Error");
 }
 
+function cancelSubmission() {
+  document.getElementById("recipe-form").reset();
+}
+
 fetchRecipes(displayRecipes, handleGETError);

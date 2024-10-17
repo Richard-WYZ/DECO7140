@@ -11,8 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
     <title>Community</title>
   </head>
   <body id="grid-container">
@@ -27,9 +27,45 @@
       <a href="food_ingredient.html">Ingredients</a>
       <a href="recipes.html">Recipes</a>
       <a href="community.html">Community</a>
-      <button>Login</button>
+      <button class="btn-login">Login</button>
     </nav>
-    <main></main>
+    <main>
+      <h2>Upload your recipe!</h2>
+      <form id="recipe-form">
+        <label for="recipe-name">Recipe Name:</label>
+        <input type="text" id="recipe-name" name="recipe-name" required />
+
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" required></textarea>
+
+        <label for="publish-date">Publication Date:</label>
+        <input type="date" id="publish-date" name="publish-date" required />
+
+        <label for="recipe-photo">Recipe Photo:</label>
+        <input
+          type="file"
+          id="recipe-photo"
+          name="recipe-photo"
+          accept="image/*"
+          required
+        />
+
+        <label for="steps">Steps:</label>
+        <textarea id="steps" name="steps" required></textarea>
+
+        <div id="form-btn-div">
+          <button
+            type="button"
+            id="btnform-cancel"
+            onclick="cancelSubmission()"
+          >
+            Cancel
+          </button>
+          <button type="submit" id="btnform-post">Post</button>
+        </div>
+      </form>
+    </main>
+
     <footer>
       <p>&copy; 2024 Wang Yuzhe(Richard). All rights reserved.</p>
     </footer>

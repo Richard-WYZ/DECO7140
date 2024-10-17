@@ -26,4 +26,71 @@
 /* button */
 .btn-login {
   background-color: var(--btn_on);
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* post form */
+#recipe-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#recipe-form input[type="text"],
+#recipe-form input[type="date"],
+#recipe-form input[type="file"],
+#recipe-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#recipe-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#form-btn-div {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Optional: Space between buttons */
+}
+
+#btnform-post,
+#btnform-cancel {
+  background-color: var(--theme);
+  color: var(--primary);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1;
+  max-width: 150px;
+}
+
+#btnform-cancel {
+  background-color: var(--danger);
+  color: white;
+}
+
+#btnform-post:hover,
+#btnform-cancel:hover {
+  opacity: 0.8;
 }

@@ -1,102 +1,100 @@
 header {
-    grid-area: header;
+  grid-area: header;
 }
 
 main {
-    grid-area: main;
+  grid-area: main;
 }
 
 footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 
 /* layout of body */
 #grid-container {
-    display: grid;
-    grid-template-areas: 
+  display: grid;
+  grid-template-areas:
     "header"
     "main"
     "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
 }
-
 
 /* layout of navigation bar */
 #flexnavbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-    background-color: var(--theme);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  background-color: var(--theme);
 }
 
-#flexnavbar > a{
+#flexnavbar > a {
+  flex-grow: 1;
+  text-decoration: none;
+  text-align: center;
+  padding: 2px;
+  color: var(--primary);
+}
+
+#flexnavbar > div > button {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  #grid-container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  #flexnavbar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: var(--theme);
+  }
+
+  #flexnavbar > a {
     flex-grow: 1;
     text-decoration: none;
     text-align: center;
+    justify-content: center;
     padding: 2px;
     color: var(--primary);
-}
+  }
 
-#flexnavbar > div, button{
-    display: none;
-}
+  #flexnavbar > a:hover {
+    background-color: #50a76aff;
+  }
 
+  #flexnavbar > div {
+    display: block;
+    height: 40%;
+  }
 
-@media screen and (min-width: 600px){
-    #grid-container {
-        display: grid;
-        grid-template-areas: 
-        "header"
-        "main"
-        "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-    }
-
-    #flexnavbar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 150px;
-        height: 100vh;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-around;
-        padding: 5px;
-        background-color: var(--theme);
-    }
-    
-    #flexnavbar > a{
-        flex-grow: 1;
-        text-decoration: none;
-        text-align: center;
-        justify-content: center;
-        padding: 2px;
-        color: var(--primary);
-    }
-
-    #flexnavbar > a:hover{
-        background-color: #50A76AFF;
-    }
-
-    #flexnavbar > div{
-        display: block;
-        height: 40%;
-    }
-
-    #flexnavbar > button{
-        display: block;
-        margin-bottom: 20px;
-    }
+  #flexnavbar > button {
+    display: block;
+    margin-bottom: 20px;
+  }
 }
