@@ -20,8 +20,8 @@
     <nav id="flexnavbar">
       <div class="nav_usr_profile">
         <a href="community.html"><img src="" alt="avatar" /></a>
-        <p>name</p>
-        <p>Bio</p>
+        <p class="user_name">Richard</p>
+        <p class="bio">Hello! I love cooking, hope to find more recipes!</p>
       </div>
       <a href="index.html">Home</a>
       <a href="food_ingredient.html">Ingredients</a>
@@ -30,30 +30,56 @@
       <button class="btn-login">Login</button>
     </nav>
     <main>
-      <h2>Upload your recipe!</h2>
-      <form id="recipe-form">
-        <label for="recipe-name">Recipe Name:</label>
-        <input type="text" id="recipe-name" name="recipe-name" required />
+      <div id="community-body">
+        <h2>Upload your recipe!</h2>
+        <form id="recipeForm">
+          <label for="recipe_name">Recipe Name:</label>
+          <input
+            type="text"
+            id="recipe_name"
+            name="recipe_name"
+            required
+            maxlength="255"
+          />
 
-        <label for="ingredients">Ingredients:</label>
-        <textarea id="ingredients" name="ingredients" required></textarea>
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            required
+            maxlength="255"
+          />
 
-        <label for="publish-date">Publication Date:</label>
-        <input type="date" id="publish-date" name="publish-date" required />
+          <label for="ingredients">Ingredients:</label>
+          <textarea id="ingredients" name="ingredients" required></textarea>
 
-        <label for="recipe-photo">Recipe Photo:</label>
-        <input
-          type="file"
-          id="recipe-photo"
-          name="recipe-photo"
-          accept="image/*"
-          required
-        />
+          <label for="instructions">Cooking Instructions:</label>
+          <textarea id="instructions" name="instructions" required></textarea>
 
-        <label for="steps">Steps:</label>
-        <textarea id="steps" name="steps" required></textarea>
+          <label for="cooking_time">Cooking Time (in minutes):</label>
+          <input
+            type="number"
+            id="cooking_time"
+            name="cooking_time"
+            min="1"
+            required
+          />
 
-        <div id="form-btn-div">
+          <label for="servings">Number of Servings:</label>
+          <input type="number" id="servings" name="servings" min="1" required />
+
+          <label for="difficulty_level">Difficulty Level:</label>
+          <select id="difficulty_level" name="difficulty_level" required>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+
+          <label for="image">Optional Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+
+          <button type="submit">Post Recipe</button>
           <button
             type="button"
             id="btnform-cancel"
@@ -61,15 +87,16 @@
           >
             Cancel
           </button>
-          <button type="submit" id="btnform-post">Post</button>
-        </div>
-      </form>
+        </form>
+
+        <div id="submitResponse" role="alert" aria-live="assertive"></div>
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2024 Wang Yuzhe(Richard). All rights reserved.</p>
     </footer>
-    <script type="module" src="js/recipes.js"></script>
+    <script type="module" src="js/community.js"></script>
     <script src="js/page_load_message.js"></script>
   </body>
 </html>

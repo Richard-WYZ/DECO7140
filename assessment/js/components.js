@@ -28,7 +28,7 @@ function postRecipes(recipesData, handleSuccess, handleError) {
       handleSuccess(Result);
     })
     .catch((Error) => {
-      console.error("Error: ", Error.massage);
+      console.error("Error: ", Error.message);
       handleError(Error);
     });
 }
@@ -61,4 +61,4 @@ function fetchRecipes(displayRecipes, handleGETError) {
     });
 }
 
-export { postRecipes, fetchRecipes };
+export { myheaders, postRecipes, fetchRecipes };

@@ -41,53 +41,28 @@ footer {
   flex-grow: 1;
   text-decoration: none;
   text-align: center;
+  justify-content: center;
   padding: 2px;
   color: var(--primary);
 }
+#flexnavbar > a:hover {
+  background-color: #50a76aff;
+}
 
-#flexnavbar > div > button {
+#flexnavbar > div,
+#flexnavbar > button {
   display: none;
 }
 
 @media screen and (min-width: 600px) {
-  #grid-container {
-    display: grid;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-  }
-
   #flexnavbar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
     width: 150px;
     height: 100vh;
-    display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    padding: 5px;
-    background-color: var(--theme);
   }
 
-  #flexnavbar > a {
-    flex-grow: 1;
-    text-decoration: none;
-    text-align: center;
-    justify-content: center;
-    padding: 2px;
-    color: var(--primary);
-  }
-
-  #flexnavbar > a:hover {
-    background-color: #50a76aff;
-  }
-
+  /* show avtar and logout button */
   #flexnavbar > div {
     display: block;
     height: 40%;
@@ -97,4 +72,9 @@ footer {
     display: block;
     margin-bottom: 20px;
   }
+}
+
+/* layout of community form */
+#community-body {
+  margin-top: 50px;
 }

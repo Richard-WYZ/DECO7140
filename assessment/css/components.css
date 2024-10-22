@@ -33,64 +33,72 @@
 }
 
 /* post form */
-#recipe-form {
-  display: flex;
-  flex-direction: column;
+#community-body {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  background: white;
   border-radius: 8px;
-  background-color: #f9f9f9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#recipe-form label {
-  margin-bottom: 5px;
+/* 表单标签 */
+#community-body label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
-#recipe-form input[type="text"],
-#recipe-form input[type="date"],
-#recipe-form input[type="file"],
-#recipe-form textarea {
-  margin-bottom: 15px;
+/* 输入字段 */
+#community-body input[type="text"],
+#community-body input[type="number"],
+#community-body input[type="file"],
+#community-body select,
+#community-body textarea {
+  width: 100%;
   padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-#recipe-form textarea {
-  resize: vertical;
-  min-height: 100px;
+#community-body input[type="text"]:focus,
+#community-body input[type="number"]:focus,
+#community-body select:focus,
+#community-body textarea:focus {
+  border-color: #195d8a; /* 聚焦时改变边框颜色 */
 }
 
-#form-btn-div {
-  display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
-  gap: 10px; /* Optional: Space between buttons */
-}
-
-#btnform-post,
-#btnform-cancel {
+/* 按钮样式 */
+#community-body button {
   background-color: var(--theme);
-  color: var(--primary);
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  flex: 1;
-  max-width: 150px;
+  margin-right: 10px; /* 按钮之间的间距 */
+  transition: background-color 0.3s;
 }
 
-#btnform-cancel {
-  background-color: var(--danger);
-  color: white;
+#community-body button:hover {
+  background-color: #195d8a; /* 悬停时的颜色变化 */
 }
 
-#btnform-post:hover,
-#btnform-cancel:hover {
-  opacity: 0.8;
+#community-body button#btnform-cancel {
+  background-color: #e06052; /* 取消按钮颜色 */
+}
+
+#community-body button#btnform-cancel:hover {
+  background-color: #c94e42; /* 悬停时取消按钮颜色 */
+}
+
+/* 提交响应 */
+#community-body #submitResponse {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
 }
