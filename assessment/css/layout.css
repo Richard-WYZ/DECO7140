@@ -54,9 +54,9 @@ footer {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   #flexnavbar {
-    width: 150px;
+    width: 250px;
     height: 100vh;
     flex-flow: column wrap;
     justify-content: space-around;

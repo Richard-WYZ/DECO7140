@@ -3,34 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- link the manifest file -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#ABD451" />
-    <!-- only needed if you have an apple phone -->
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="/icons/icon-192x192.png"
-    />
-    <!-- service worker registration -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/serviceWorker.js")
-            .then((registration) => {
-              console.log(
-                "Service Worker registered with scope: ",
-                registration.scope
-              );
-            })
-            .catch((error) => {
-              console.log("Service Worker registration failed: ", error);
-            });
-        });
-      }
-    </script>
-
     <link rel="stylesheet" href="css/css_reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,10 +13,10 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <title>Page Title</title>
+    <title>Recipes</title>
   </head>
   <body id="grid-container">
-    <header><h1>Easy Cook</h1></header>
+    <header><h1>Recipes Details</h1></header>
     <nav id="flexnavbar">
       <div class="nav_usr_profile">
         <a href="community.html"><img src="" alt="avatar" /></a>
@@ -58,14 +30,13 @@
       <button class="btn-login">Login</button>
     </nav>
     <main>
-      <div class="card-container">My Plan</div>
-      <div class="card-container">New Recipes</div>
-      <div class="card-container">My Follow</div>
-      <div class="card-container">Like</div>
+      <header></header>
+      <div class="detailed-information"></div>
     </main>
     <footer>
       <p>&copy; 2024 Wang Yuzhe(Richard). All rights reserved.</p>
     </footer>
+
     <script src="js/page_load_message.js"></script>
   </body>
 </html>
