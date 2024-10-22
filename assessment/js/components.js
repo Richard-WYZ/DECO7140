@@ -5,6 +5,7 @@ const myheaders = new Headers();
 myheaders.append("student_number", studentNumber);
 myheaders.append("uqcloud_zone_id", uqcloudZoneID);
 
+// post recipes into API
 function postRecipes(recipesData, handleSuccess, handleError) {
   fetch(
     "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericrecipe/",
@@ -33,6 +34,7 @@ function postRecipes(recipesData, handleSuccess, handleError) {
     });
 }
 
+// get recipes from API
 function fetchRecipes(displayRecipes, handleGETError) {
   fetch(
     "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericrecipe/",
@@ -61,4 +63,4 @@ function fetchRecipes(displayRecipes, handleGETError) {
     });
 }
 
-export { myheaders, postRecipes, fetchRecipes };
+export { postRecipes, fetchRecipes };

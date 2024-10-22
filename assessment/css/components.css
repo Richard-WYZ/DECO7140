@@ -1,27 +1,25 @@
 /* card components */
-.card-container {
+#recipe-list {
   display: flex;
   gap: 20px;
-  margin: 0 auto;
+  margin: 10px 10px;
 }
-/*
-  .card {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    padding: 10px 10px 10px 10px;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
 
-  .card:focus {
-    border: 2px;
-    border-color: blue;
-  }*/
+.recipe-card {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding: 10px 10px 10px 10px;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
 /* button */
 .btn-login {
@@ -42,14 +40,13 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 表单标签 */
 #community-body label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
 
-/* 输入字段 */
+/* input style */
 #community-body input[type="text"],
 #community-body input[type="number"],
 #community-body input[type="file"],
@@ -69,10 +66,10 @@
 #community-body input[type="number"]:focus,
 #community-body select:focus,
 #community-body textarea:focus {
-  border-color: #195d8a; /* 聚焦时改变边框颜色 */
+  border-color: #195d8a;
 }
 
-/* 按钮样式 */
+/* button style */
 #community-body button {
   background-color: var(--theme);
   padding: 10px 15px;
@@ -80,23 +77,23 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  margin-right: 10px; /* 按钮之间的间距 */
+  margin-right: 10px;
   transition: background-color 0.3s;
 }
 
 #community-body button:hover {
-  background-color: #195d8a; /* 悬停时的颜色变化 */
+  background-color: #195d8a;
 }
 
 #community-body button#btnform-cancel {
-  background-color: #e06052; /* 取消按钮颜色 */
+  background-color: #e06052;
 }
 
 #community-body button#btnform-cancel:hover {
-  background-color: #c94e42; /* 悬停时取消按钮颜色 */
+  background-color: #c94e42;
 }
 
-/* 提交响应 */
+/* response style */
 #community-body #submitResponse {
   margin-top: 15px;
   font-weight: bold;

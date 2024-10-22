@@ -1,4 +1,4 @@
-import { myheaders, postRecipes } from "./components.js";
+import { postRecipes } from "./components.js";
 
 document
   .getElementById("recipeForm")
