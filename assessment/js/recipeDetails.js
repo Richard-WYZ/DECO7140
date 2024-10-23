@@ -14,6 +14,9 @@ function displayRecipeContent(recipes) {
   );
 
   if (cur_recipe) {
+    document.getElementById(
+      "header"
+    ).innerHTML = `<h1>${cur_recipe.recipe_name}</h1>`;
     // exist
   } else {
     console.error("Recipe not found");

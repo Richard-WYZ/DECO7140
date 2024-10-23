@@ -16,16 +16,21 @@
     <title>Recipes</title>
   </head>
   <body id="grid-container">
-    <header><h1>Recipes page</h1></header>
+    <header class="search-bar">
+      <input type="text" placeholder="Search..." class="search-box" />
+      <button class="search-button">Search</button>
+    </header>
     <nav id="flexnavbar">
       <div class="nav_usr_profile">
-        <a href="community.html"><img src="" alt="avatar" /></a>
-        <p>name</p>
-        <p>Bio</p>
+        <a href="community.html"
+          ><img src="./source/avtar.png" alt="avatar"
+        /></a>
+        <p class="user_name">Richard</p>
+        <p class="bio">Hello! I love cooking, hope to find more recipes!</p>
       </div>
       <a href="index.html">Home</a>
-      <a href="food_ingredient.html">Ingredients</a>
-      <a href="recipes.html">Recipes</a>
+      <a href="meal_planning.html">Planning</a>
+      <a href="recipes.html" class="active">Recipes</a>
       <a href="community.html">Community</a>
       <button class="btn-login">Login</button>
     </nav>
