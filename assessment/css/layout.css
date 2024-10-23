@@ -170,3 +170,50 @@ footer {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+/* layout of detail page */
+.detailed-information {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.detailed-information p,
+.detailed-information h3,
+.detailed-information ul {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.detail-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 20px;
+}
+
+.detail-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.detail-head img {
+  flex: 1;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.detail-body {
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .detail-head {
+    flex-direction: row;
+  }
+}

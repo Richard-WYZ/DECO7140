@@ -2,32 +2,19 @@ import { fetchRecipes } from "./components.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   fetchRecipes(displayRecipes, handleGETError);
-
-  const searchButton = document.querySelector(".search-button");
-  const searchBox = document.querySelector(".search-box");
-
-  searchButton.addEventListener("click", () => {
-    searchRecipes(searchBox.value);
-  });
-
-  searchBox.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      searchRecipes(searchBox.value);
-    }
-  });
 });
 
 // Function to display recipes as cards
 function displayRecipes(recipes) {
-  window.allRecipes = recipes; // store all recipes
-  renderRecipes(recipes);
-}
+  // sort by date and choose 10 newest
+  const latestRecipes = recipes
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 10);
 
-function renderRecipes(recipes) {
-  const recipeList = document.querySelector(".recipe-list");
+  const recipeList = document.querySelector("#new-recipes");
   recipeList.innerHTML = "";
 
-  recipes.forEach((recipe) => {
+  latestRecipes.forEach((recipe) => {
     const recipeCard = document.createElement("div");
     recipeCard.className = "recipe-card"; // card component
 
@@ -53,11 +40,4 @@ function renderRecipes(recipes) {
 
 function handleGETError(Error) {
   console.log("Error", Error);
-}
-
-function searchRecipes(query) {
-  const filteredRecipes = window.allRecipes.filter((recipe) =>
-    recipe.recipe_name.toLowerCase().includes(query.toLowerCase())
-  );
-  renderRecipes(filteredRecipes);
 }
