@@ -37,11 +37,19 @@ footer {
   background-color: var(--theme);
 }
 
+#flexnavbar h2 {
+  color: var(--header);
+  padding: 10px;
+}
+
 #flexnavbar > a {
   flex-grow: 1;
+  display: flex;
+  border-radius: 15px;
   text-decoration: none;
   text-align: center;
   justify-content: center;
+  align-items: center;
   padding: 2px;
   color: var(--primary);
 }
@@ -71,16 +79,32 @@ footer {
   /* show avtar and logout button */
   #flexnavbar > div {
     display: block;
-    height: 50%;
+    height: 40%;
+  }
+
+  .bio {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
   }
 
   /* user avtar image */
   #flexnavbar .nav_usr_profile img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px auto;
+  }
+
+  #flexnavbar > a {
+    font-size: 1.5rem;
+    margin-top: 6px;
+  }
+
+  #flexnavbar > a:hover {
+    transform: translateX(-5px);
+    transform: translateY(-5px);
   }
 
   #flexnavbar > button {
