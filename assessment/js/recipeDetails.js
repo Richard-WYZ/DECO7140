@@ -19,18 +19,29 @@ function displayRecipeContent(recipes) {
 
   if (cur_recipe) {
     // exist
-    document.querySelector("header h1").textContent = cur_recipe.recipe_name;
     recipeDetail.innerHTML = `
             <div class="detail-head">
+              <h2>${cur_recipe.recipe_name}</h2>
+              </br>
               <div class="detail-info">
-                <p><strong>Author:</strong> ${cur_recipe.author}</p>
-                <p><strong>Cooking Time:</strong> ${
-                  cur_recipe.cooking_time
-                } minutes</p>
-                <p><strong>Servings:</strong> ${cur_recipe.servings}</p>
-                <p><strong>Difficulty:</strong> ${
-                  cur_recipe.difficulty_level
-                }</p>
+                <table>
+                  <tr>
+                    <th>Author:</th>
+                    <td>${cur_recipe.author}</td>
+                  </tr>
+                  <tr>
+                    <th>Cooking Time:</th>
+                    <td>${cur_recipe.cooking_time} minutes</td>
+                  </tr>
+                  <tr>
+                    <th>Servings:</th>
+                    <td>${cur_recipe.servings}</td>
+                  </tr>
+                  <tr>
+                    <th>Difficulty:</th>
+                    <td>${cur_recipe.difficulty_level}</td>
+                  </tr>
+                </table>
               </div>
               <img src="${cur_recipe.image}" alt="${cur_recipe.recipe_name}" />
             </div>

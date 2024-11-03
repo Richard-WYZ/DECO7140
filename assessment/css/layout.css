@@ -197,11 +197,12 @@ footer {
 }
 
 .recipe-list {
-  display: flex;
+  display: grid;
   gap: 20px;
-  margin-top: 120px;
+  margin-top: 80px;
   margin-left: 20px;
   margin-right: 20px;
+  grid-template-columns: 1fr; /* one card each row */
 }
 
 /* layout of detail page */
@@ -232,12 +233,39 @@ footer {
 .detail-info {
   flex: 1;
   margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-info th,
+.detail-info td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.detail-info tr th:last-child,
+.detail-info tr td:last-child {
+  border-right: none;
+}
+
+.detail-info th {
+  font-weight: bold;
+  width: 30%;
+}
+
+.detail-info td {
+  width: 70%;
 }
 
 .detail-head img {
   flex: 1;
-  max-width: 400px;
-  max-height: 400px;
+  width: 100%;
 }
 
 .detail-body {
@@ -247,6 +275,30 @@ footer {
 
 @media screen and (min-width: 768px) {
   .detail-head {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    margin: 20px;
+  }
+
+  .detail-head h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .detail-info {
+    grid-column: 1 / 2;
+  }
+
+  .detail-head img {
+    grid-column: 2 / 3;
+    object-fit: cover;
+  }
+
+  .recipe-list {
+    margin-top: 120px;
+    grid-template-columns: repeat(4, 1fr); /* 4 card each row */
   }
 }
