@@ -2,6 +2,17 @@ import { fetchRecipes } from "./components.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   fetchRecipes(displayRecipeContent, handleGETError);
+
+  // Set the back button to navigate to the previous page
+  const backButton = document.querySelector(".btn-back");
+  backButton.addEventListener("click", function () {
+    const prevPage = sessionStorage.getItem("prevPage");
+    if (prevPage) {
+      window.location.href = prevPage;
+    } else {
+      window.location.href = "index.html"; // back to home page by default
+    }
+  });
 });
 
 // Function to display recipes content

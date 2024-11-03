@@ -25,7 +25,9 @@ function displayRecipes(recipes) {
     recipeCard.innerHTML = `
           <a href="./recipeDetails.html?name=${encodeURIComponent(
             recipe.recipe_name
-          )}&created_at=${encodeURIComponent(recipe.created_at)}">
+          )}&created_at=${encodeURIComponent(
+      recipe.created_at // store current page for back button
+    )}" onclick="sessionStorage.setItem('prevPage', '${window.location.href}')">
             <h3>${recipe.recipe_name}</h3>
             <img src="${recipe.image}" alt="${recipe.recipe_name}" />
             <p><strong>Author:</strong> ${recipe.author}</p>
