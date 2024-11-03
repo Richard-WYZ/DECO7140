@@ -1,37 +1,34 @@
 /* card components */
-.card {
-  text-decoration: none;
-  width: 100px;
-  max-width: 100px;
-  min-width: 100px;
-  height: 100px;
-  max-height: 100px;
-  min-height: 100px;
-  margin-right: 10px;
+.card,
+.recipe-card {
+  border: 4px solid transparent;
+  overflow: hidden;
   background-color: white;
   border-radius: 10px;
+  padding: 10px 10px 10px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  min-width: 200px;
+  height: 100%;
+  margin-right: 10px;
   padding: 15px;
 }
 
 .recipe-card {
-  border-radius: 10px;
-  overflow: hidden;
   min-width: 200px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  padding: 10px 10px 10px 10px;
+}
+
+.card:focus-within:focus-visible,
+.recipe-card:focus-within:focus-visible {
+  border-color: blue;
 }
 
 .recipe-card img {
   width: 100%;
   height: 50%;
-}
-
-.card a,
-.recipe-card a {
-  text-decoration: none;
 }
 
 .card:active,
@@ -74,6 +71,19 @@
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+}
+
+.btn-back {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-image: url(../source/back-icon.png);
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 
 /* search-box */

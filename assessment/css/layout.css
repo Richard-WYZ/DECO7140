@@ -45,6 +45,7 @@ footer {
 #flexnavbar > a {
   flex-grow: 1;
   display: flex;
+  border: 4px solid transparent;
   border-radius: 15px;
   text-decoration: none;
   text-align: center;
@@ -58,8 +59,11 @@ footer {
   background-color: #50a76aff;
 }
 
+#flexnavbar > a:focus-visible {
+  border-color: blue;
+}
+
 #flexnavbar .active {
-  border: 1px;
   background-color: #50a76aff;
 }
 
@@ -78,7 +82,7 @@ footer {
 
   /* show avtar and logout button */
   #flexnavbar > div {
-    display: block;
+    display: flex;
     height: 40%;
   }
 
@@ -88,13 +92,32 @@ footer {
     border-radius: 15px;
   }
 
-  /* user avtar image */
-  #flexnavbar .nav_usr_profile img {
+  .nav_usr_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav_usr_profile a {
+    border: 4px solid transparent;
+    display: block;
     width: 100px;
     height: 100px;
     border-radius: 50%;
+  }
+
+  /* user avtar image */
+  .nav_usr_profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    margin: 10px auto;
+    margin: 0;
+  }
+
+  .nav_usr_profile a:focus-visible {
+    border-color: blue;
   }
 
   #flexnavbar > a {
@@ -157,7 +180,6 @@ footer {
 #community-body button {
   background-color: var(--theme);
   padding: 10px 15px;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
