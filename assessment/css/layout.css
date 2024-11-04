@@ -241,6 +241,10 @@ footer {
   min-width: 300px;
 }
 
+#scroll-container {
+  padding-bottom: 60px;
+}
+
 .recipe-list {
   display: grid;
   gap: 20px;
@@ -321,6 +325,10 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  #scroll-container {
+    padding-bottom: 20px;
+  }
+
   .detail-head {
     display: grid;
     grid-template-columns: 1fr 1fr;
