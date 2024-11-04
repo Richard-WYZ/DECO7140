@@ -10,7 +10,7 @@
   --background: #fbe8da;
   --danger: #e06052;
   --btn_on: #ffffff;
-  --btn_off: #ff0700ff;
+  --btn_off: #c94e42;
 }
 
 /*
@@ -126,6 +126,10 @@ button:focus-visible {
   html {
     margin-bottom: 0px;
     margin-left: 250px;
+  }
+
+  main {
+    max-width: calc(100vw - 250px);
   }
 
   header {

@@ -1,4 +1,4 @@
-const recipes = document.querySelectorAll(".card");
+const recipes = document.querySelectorAll(".recipe-card");
 const timeSlots = document.querySelectorAll(".time-slot");
 
 // drag and drop

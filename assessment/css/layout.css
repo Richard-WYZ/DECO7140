@@ -136,11 +136,16 @@ footer {
   }
 }
 
+/* community page */
+.community-page {
+  justify-items: center;
+}
+
 /* layout of community form */
 /* post form */
 #community-body {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 20px;
   padding: 20px;
   background: white;
   border-radius: 8px;
@@ -151,6 +156,16 @@ footer {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
+}
+
+#community-body textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /* input style */
@@ -173,7 +188,7 @@ footer {
 #community-body input[type="number"]:focus,
 #community-body select:focus,
 #community-body textarea:focus {
-  border-color: #195d8a;
+  border-color: blue;
 }
 
 /* button style */
@@ -188,15 +203,15 @@ footer {
 }
 
 #community-body button:hover {
-  background-color: #195d8a;
+  background-color: #50a76aff;
 }
 
 #community-body button#btnform-cancel {
-  background-color: #e06052;
+  background-color: var(--danger);
 }
 
 #community-body button#btnform-cancel:hover {
-  background-color: #c94e42;
+  background-color: var(--btn_off);
 }
 
 /* response style */
@@ -209,13 +224,20 @@ footer {
 /* card container */
 .card-container {
   display: flex;
+  max-width: 100%;
   overflow-x: auto;
   white-space: nowrap; /* only one line*/
-  margin: 10px;
-  padding: 10px;
+  padding: 20px;
+  margin: 20px;
+  gap: 20px;
   border-radius: 10px;
   min-height: 200px;
   background-color: #d9d9d9;
+}
+
+.card-container .recipe-card {
+  width: 300px;
+  min-width: 300px;
 }
 
 .recipe-list {
@@ -288,6 +310,8 @@ footer {
 .detail-head img {
   flex: 1;
   width: 100%;
+  max-height: 400px;
+  object-fit: contain;
 }
 
 .detail-body {

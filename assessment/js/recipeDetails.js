@@ -30,6 +30,12 @@ function displayRecipeContent(recipes) {
 
   if (cur_recipe) {
     // exist
+
+    // use default image if there are no image in the api
+    const imageUrl = cur_recipe.image
+      ? cur_recipe.image
+      : "./source/notAvailable.png";
+
     recipeDetail.innerHTML = `
             <div class="detail-head">
               <h2>${cur_recipe.recipe_name}</h2>
@@ -54,7 +60,7 @@ function displayRecipeContent(recipes) {
                   </tr>
                 </table>
               </div>
-              <img src="${cur_recipe.image}" alt="${cur_recipe.recipe_name}" />
+              <img src="${imageUrl}" alt="${cur_recipe.recipe_name}" />
             </div>
             <div class="detail-body">
               <h3><strong>Ingredients:</strong></h3>
