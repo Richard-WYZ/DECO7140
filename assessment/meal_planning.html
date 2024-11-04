@@ -35,33 +35,78 @@
       </button>
     </nav>
     <main>
-      <div class="card-container">
-        <div class="recipe-card" draggable="true" id="recipe1">
-          butter chicken
-        </div>
-        <div class="recipe-card" draggable="true" id="recipe2"></div>
-        <div class="recipe-card" draggable="true" id="recipe3"></div>
+      <h2>Drag Recipes to Make your Plan!</h2>
+      <div class="recipe-search-bar">
+        <input
+          type="text"
+          class="search-box"
+          placeholder="Search for a recipe"
+        />
+        <button class="search-button">Search</button>
       </div>
+      <div class="card-container"></div>
       <div class="meal-schedule">
         <h2>Your Meal Schedule</h2>
         <div class="schedule-grid">
           <div class="day-column">
-            <div class="time-slot" data-time="Monday 8 AM">Monday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Tuesday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Wednesday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Thursday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Friday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Saturday 12:00</div>
-            <div class="time-slot" data-time="Monday 8 AM">Sunday 12:00</div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Monday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Tuesday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Wednesday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Thursday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Friday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Saturday 12:00
+            </div>
+            <div class="time-slot" data-time="Monday 8 AM">
+              <div class="slot-content"></div>
+              Sunday 12:00
+            </div>
           </div>
           <div class="day-column">
-            <div class="time-slot" data-time="Monday 1 PM">Monday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Tuesday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Wednesday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Thursday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Friday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Saturday 18:00</div>
-            <div class="time-slot" data-time="Monday 1 PM">Sunday 18:00</div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Monday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Tuesday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Wednesday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Thursday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Friday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Saturday 18:00
+            </div>
+            <div class="time-slot" data-time="Monday 1 PM">
+              <div class="slot-content"></div>
+              Sunday 18:00
+            </div>
           </div>
         </div>
       </div>
@@ -69,7 +114,7 @@
     <footer>
       <p>&copy; 2024 Wang Yuzhe(Richard). All rights reserved.</p>
     </footer>
-    <script src="js/meal_planning.js"></script>
+    <script type="module" src="js/meal_planning.js"></script>
     <script src="js/page_load_message.js"></script>
   </body>
 </html>
