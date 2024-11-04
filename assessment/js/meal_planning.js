@@ -60,6 +60,11 @@ function enableDragAndDrop() {
 
   recipes.forEach((recipe) => {
     recipe.addEventListener("dragstart", dragStart);
+
+    // add touch event for mobile
+    recipe.addEventListener("touchstart", touchStart);
+    recipe.addEventListener("touchmove", touchMove);
+    recipe.addEventListener("touchend", touchEnd);
   });
 
   timeSlots.forEach((slot) => {
@@ -151,6 +156,88 @@ function returnRecipe(event) {
       }
     });
   }
+}
+
+// var for screen touch
+let activeCard = null;
+let startX = 0;
+let startY = 0;
+
+function touchStart(event) {
+  const originalCard = event.target.closest(".recipe-card");
+  if (originalCard) {
+    // clone card
+    activeCard = originalCard.cloneNode(true);
+    document.body.appendChild(activeCard);
+
+    // set start position
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+
+    activeCard.style.position = "absolute";
+    activeCard.style.zIndex = 1000;
+    activeCard.style.left = `${startX}px`;
+    activeCard.style.top = `${startY}px`;
+
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function touchMove(event) {
+  if (!activeCard) return;
+
+  event.preventDefault(); // ban scroll while moving
+
+  const currentX = event.touches[0].clientX;
+  const currentY = event.touches[0].clientY;
+
+  // refresh location of card to follow the finger
+  activeCard.style.left = `${currentX}px`;
+  activeCard.style.top = `${currentY}px`;
+}
+
+function touchEnd(event) {
+  if (!activeCard) return;
+
+  const touchX = event.changedTouches[0].clientX;
+  const touchY = event.changedTouches[0].clientY;
+
+  const dropTarget = document.elementFromPoint(touchX, touchY);
+  const timeSlot = dropTarget ? dropTarget.closest(".time-slot") : null;
+
+  if (timeSlot) {
+    timeSlot.querySelector(".slot-content").innerHTML = "";
+
+    activeCard.classList.add("dropped-card");
+    activeCard.style.position = "relative";
+    activeCard.style.zIndex = "";
+    activeCard.style.left = "";
+    activeCard.style.top = "";
+
+    // add card
+    timeSlot.querySelector(".slot-content").appendChild(activeCard);
+
+    // bind event to let it can be drag out
+    activeCard.addEventListener("touchstart", touchStart);
+    activeCard.addEventListener("touchmove", touchMove);
+    activeCard.addEventListener("touchend", touchEnd);
+  } else if (activeCard.classList.contains("dropped-card")) {
+    // check drag out from time slot
+    const parentSlot = document
+      .querySelector(".time-slot .slot-content .dropped-card")
+      .closest(".time-slot");
+    if (parentSlot) {
+      parentSlot.querySelector(".slot-content").innerHTML = "";
+    }
+    activeCard.remove(); // remove card
+  } else {
+    // remove clone
+    activeCard.remove();
+  }
+
+  // add back scroll
+  document.body.style.overflow = "";
+  activeCard = null;
 }
 
 // search
